@@ -24,7 +24,8 @@
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
-      '@angular/jwt': 'npm:angular2-jwt/angular2-jwt.js'
+      'angular2-jwt': 'npm:angular2-jwt/angular2-jwt.js',
+      'angular2-auth0lock': 'npm:auth0-lock/lib/index.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { myConfig } from './auth.config';
-import { tokenNotExpired } from '@angular/jwt';
+import { tokenNotExpired } from 'angular2-jwt';
 
 //to avoid editor errors
 declare var Auth0Lock: any;

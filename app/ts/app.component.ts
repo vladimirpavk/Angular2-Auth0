@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 @Component({
   selector: 'my-app',
   //templateUrl: './app/ts/app.component.html',
-  template: `<button (click)="auth.login()">Login</button>"`,
+  template: `<button (click)="auth.login()">Login</button>`,
   providers: [ AuthService ]
 })
 export class AppComponent{
