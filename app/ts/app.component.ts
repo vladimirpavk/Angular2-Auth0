@@ -1,16 +1,29 @@
 /// <reference path="../../node_modules/@angular/common/index.d.ts" />
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth.service';
+import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'my-app',
-  //templateUrl: './app/ts/app.component.html',
-  template: `<button (click)="auth.login()">Login</button>`,
-  providers: [ AuthService ]
+  template:`
+    <h1>{{title}}</h1>
+    <nav>
+      <a routerLink="/login">Login</a>
+      <a routerLink="/home">Home</a>
+    </nav>
+    <router-outlet></router-outlet>
+  `,
+  providers: [ RouterModule ]
 })
-export class AppComponent{
+export class AppComponent implements OnInit{
 
-  constructor(private auth: AuthService){
+  private title: string;
 
+  constructor(){
+
+  }
+
+  ngOnInit(){
+     this.title="Application Component";
   }
 
 
