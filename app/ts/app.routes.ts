@@ -6,9 +6,9 @@ import { HomeComponent } from './home.component';
 
 
 const appRoutes: Routes = [
-  { path: '/login', component: LoginComponent },
-  { path: '/', redirectTo: '/login' },
-  { path: '/home', component: HomeComponent, pathMatch: 'full' } 
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent } 
 ];
 
 export const appRoutingProviders: any[] = [
