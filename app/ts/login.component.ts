@@ -12,7 +12,8 @@ import { AuthService } from './auth.service';
 export class LoginComponent{
 
   constructor(private auth: AuthService){
-
+      console.log(window.location.origin + '/login');
+      console.log(window.location.pathname);
   }
 
 
