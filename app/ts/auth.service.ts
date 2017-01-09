@@ -8,10 +8,16 @@ declare var Auth0Lock: any;
 @Injectable()
 export class AuthService{
 
-    private lock:any;
+    private lock=new Auth0Lock(myConfig.clientID, myConfig.domain,
+     {
+       auth: {
+            redirectUrl: location.origin + '/login',
+            responseType: 'token',
+        }
+     }
+    );
     
-    constructor(){
-        this.lock=new Auth0Lock(myConfig.clientID, myConfig.domain, {});
+    constructor(){    
         this.lock.on("authenticated", (authResult)=>{
             console.log("Authenticated");
             console.log(authResult);

@@ -10,10 +10,17 @@ import { routing,
          appRoutingProviders } from './app.routes';
 import { AUTH_PROVIDERS }      from 'angular2-jwt';
 
+import { PathLocationStrategy, LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 @NgModule({
   imports:      [ BrowserModule, routing ],
   declarations: [ AppComponent, HomeComponent, LoginComponent ],
   bootstrap:    [ AppComponent ],
-  providers:    [ appRoutingProviders, AUTH_PROVIDERS ]
+  providers:    [ AUTH_PROVIDERS,
+                  { 
+                    provide: LocationStrategy,
+                    useClass: HashLocationStrategy 
+                  }
+                ]
 })
 export class AppModule { }

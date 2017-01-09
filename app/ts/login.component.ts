@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
 @Component({
   selector: 'login',
-  template: `<button (click)="auth.login()">Login</button>
+  template: `<h1>Login Component</h1>
+             <button (click)="auth.login()">Login</button>
              <button (click)="auth.logout()">Logout</button>
   `,
   providers: [ AuthService ]
@@ -11,7 +12,8 @@ import { AuthService } from './auth.service';
 export class LoginComponent{
 
   constructor(private auth: AuthService){
-
+      console.log(window.location.origin + '/login');
+      console.log(window.location.pathname);
   }
 
 
