@@ -13,6 +13,7 @@ export class AuthService{
     constructor(){
         this.lock=new Auth0Lock(myConfig.clientID, myConfig.domain, {});
         this.lock.on("authenticated", (authResult)=>{
+            console.log("Authenticated");
             console.log(authResult);
             localStorage.setItem('id_token', authResult.idToken);
         });        
