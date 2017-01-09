@@ -10,10 +10,10 @@ export class AuthService{
 
     private lock=new Auth0Lock(myConfig.clientID, myConfig.domain,
      {
-       auth: {
+      /* auth: {
             redirectUrl: location.origin + '/#/login',
             responseType: 'token'
-        }
+        }*/
      }
     );
     

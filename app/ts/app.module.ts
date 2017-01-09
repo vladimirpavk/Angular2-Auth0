@@ -19,7 +19,7 @@ import { PathLocationStrategy, LocationStrategy, HashLocationStrategy } from '@a
   providers:    [ AUTH_PROVIDERS,
                   { 
                     provide: LocationStrategy,
-                    useClass: PathLocationStrategy 
+                    useClass: HashLocationStrategy 
                   }
                 ]
 })
