@@ -20,7 +20,8 @@ import { PathLocationStrategy, LocationStrategy, HashLocationStrategy } from '@a
                   { 
                     provide: LocationStrategy,
                     useClass: HashLocationStrategy 
-                  }
+                  },
+                  appRoutingProviders
                 ]
 })
 export class AppModule { }

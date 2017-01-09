@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { myConfig } from './auth.config';
 import { tokenNotExpired } from 'angular2-jwt';
+import { Router } from '@angular/router';
 
 //to avoid editor errors
 declare var Auth0Lock: any;
@@ -9,15 +10,10 @@ declare var Auth0Lock: any;
 export class AuthService{
 
     private lock=new Auth0Lock(myConfig.clientID, myConfig.domain,
-     {
-      /* auth: {
-            redirectUrl: location.origin + '/#/login',
-            responseType: 'token'
-        }*/
-     }
-    );
-    
-    constructor(){    
+     {}     
+    );        
+
+    constructor(private router: Router){    
         this.lock.on("authenticated", (authResult)=>{
             console.log("Authenticated");
             console.log(authResult);
