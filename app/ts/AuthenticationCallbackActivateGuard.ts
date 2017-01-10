@@ -14,6 +14,8 @@ export class AuthenticationCallbackActivateGuard implements CanActivate {
     // You may want to make a more robust check here
     var isAuthenticationCallback = path.indexOf("access_token") !== -1;
 
+    console.log(path+"  "+isAuthenticationCallback);
+
     if (isAuthenticationCallback) {
       this.router.navigate(['/login'], { fragment: path });
 
