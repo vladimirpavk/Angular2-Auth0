@@ -7,10 +7,10 @@ import { AppComponent } from './app.component';
 import { AuthenticationCallbackActivateGuard } from './AuthenticationCallbackActivateGuard';
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },  
+  { path: 'login', component: LoginComponent, canActivate: [AuthenticationCallbackActivateGuard] },  
   { path: 'home', component: HomeComponent },
   { path: '**', redirectTo: '/login'}
-  //{ path: '**', redirectTo: '/login', pathMatch: 'full', canActivate: [AuthenticationCallbackActivateGuard] }
+  //{ path: '**', redirectTo: '/login', pathMatch: 'full',  }
 ];
 
 export const appRoutingProviders: any[] = [
