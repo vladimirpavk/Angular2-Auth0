@@ -1,30 +1,27 @@
 # Angular 2 - Auth0
-*auth0-lock* component can not be loaded with SystemJS module loader (no idea).
+*auth0-lock* component can not be loaded with SystemJS module loader.
 Must be loaded from *index.html* 
 ```
     <script src="https://cdn.auth0.com/js/lock/10.6/lock.min.js"></script>
 ```
-When using hash url application routing can`t get authentification working. The response URL path is invalid nomatter what it is.
-Switched to **PathLocationStrategy** in *app.module.ts*. 
-``` 
-providers:    [ AUTH_PROVIDERS,
-                  { 
-                    provide: LocationStrategy,
-                    useClass: PathLocationStrategy 
-                  }
-                ]
+Install *angular-jwt* helper library and reference to in *systemjs.config.js*.
+```
+  'angular2-jwt': 'npm:angular2-jwt/angular2-jwt.js',
 ```
 The callback URL configured in Auth0 Application Configuration Page is:
 ```
-  https://localhost:3333/#/login
+  https://localhost:3333
 ```
+**Angular2** router is configured to use **Hash Location Strategy**.
 
-It`s a workaround but working.
+The *auth0-lock* component is called from *https://localhost:3333/#/login* url.
 
 Install *angular-jwt* helper library and reference to in *systemjs.config.js*.
 ```
   'angular2-jwt': 'npm:angular2-jwt/angular2-jwt.js',
 ```
+
+Implemented workaround from [http://stackoverflow.com/questions/39641554/how-to-use-the-hashlocationstrategy-with-the-auth0-lock-widget-for-user-login](http://).
 
 ### Angular 2 application skeleton with lite server
 
