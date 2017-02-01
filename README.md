@@ -10,7 +10,7 @@ Install *angular-jwt* helper library and reference to in *systemjs.config.js*.
 ```
 The callback URL configured in Auth0 Application Configuration Page is:
 ```
-  https://localhost:3333/
+  http://localhost:3333/
 ```
 **Angular2** router is configured to use **Hash Location Strategy**.
 
